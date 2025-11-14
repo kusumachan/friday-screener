@@ -134,3 +134,24 @@ class TestTrendAnalysis:
         assert calculate_percentage_change(100, 110) == 0.1  # 10% increase
         assert calculate_percentage_change(100, 90) == -0.1  # 10% decrease
         assert calculate_percentage_change(0, 100) == 0.0  # Handle zero
+
+    def test_safe_float_with_non_string_non_numeric(self):
+        """Test safe_float dengan non-string, non-numeric type."""
+        # Test dengan list, dict, dll yang bukan string atau numeric
+        assert safe_float([]) is None
+        assert safe_float({}) is None
+        assert safe_float([], default=0.0) == 0.0
+
+    def test_safe_int_with_non_string_non_numeric(self):
+        """Test safe_int dengan non-string, non-numeric type."""
+        # Test dengan list, dict, dll yang bukan string atau numeric
+        assert safe_int([]) is None
+        assert safe_int({}) is None
+        assert safe_int([], default=0) == 0
+
+    def test_format_currency_usd(self):
+        """Test format_currency untuk USD."""
+        assert format_currency(1_500_000_000, currency="USD") == "$1.50B"
+        assert format_currency(500_000_000, currency="USD") == "$500.00M"
+        assert format_currency(2_000_000, currency="USD") == "$2.00M"
+        assert format_currency(5000, currency="USD") == "$5,000.00"

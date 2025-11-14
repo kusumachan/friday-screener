@@ -5,13 +5,10 @@ Service ini mengambil berita dari berbagai sumber dan melakukan
 sentiment analysis sederhana untuk identify positive/negative news.
 """
 
-import re
 from datetime import datetime
-from typing import List, Optional
+from typing import List
 
-import requests
 import yfinance as yf
-from bs4 import BeautifulSoup
 
 from src.models.stock_data import NewsItem
 from src.utils.helpers import normalize_ticker
@@ -262,14 +259,12 @@ class NewsScraperService:
         Returns:
             List of NewsItem
         """
-        # Remove .JK suffix for IDX search
-        ticker_clean = ticker.replace('.JK', '')
-
         news_items = []
 
         try:
             # This would require specific implementation based on IDX website structure
             # Example structure (not actual implementation):
+            # ticker_clean = ticker.replace('.JK', '')
             # url = f"https://www.idx.co.id/perusahaan-tercatat/profil-perusahaan-tercatat/?kodeEmiten={ticker_clean}"
             # response = requests.get(url, timeout=10)
             # Parse HTML and extract news

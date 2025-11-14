@@ -22,6 +22,11 @@ def safe_float(value: Any, default: Optional[float] = None) -> Optional[float]:
         return default
 
     try:
+        # Handle numpy types
+        import numpy as np
+        if isinstance(value, (np.integer, np.floating)):
+            return float(value)
+        
         if isinstance(value, (int, float)):
             return float(value)
         if isinstance(value, str):
@@ -30,6 +35,11 @@ def safe_float(value: Any, default: Optional[float] = None) -> Optional[float]:
             return float(cleaned)
         return default
     except (ValueError, TypeError, AttributeError):
+        return default
+    except ImportError:
+        # If numpy is not available, fall back to standard types
+        if isinstance(value, (int, float)):
+            return float(value)
         return default
 
 
@@ -48,12 +58,26 @@ def safe_int(value: Any, default: Optional[int] = None) -> Optional[int]:
         return default
 
     try:
+        # Handle numpy types
+        import numpy as np
+        if isinstance(value, np.integer):
+            return int(value)
+        if isinstance(value, np.floating):
+            return int(float(value))
+        
         if isinstance(value, int):
             return value
         if isinstance(value, (float, str)):
             return int(float(str(value).replace(',', '')))
         return default
     except (ValueError, TypeError, AttributeError):
+        return default
+    except ImportError:
+        # If numpy is not available, fall back to standard types
+        if isinstance(value, int):
+            return value
+        if isinstance(value, (float, str)):
+            return int(float(str(value).replace(',', '')))
         return default
 
 

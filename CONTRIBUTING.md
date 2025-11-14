@@ -104,11 +104,11 @@ Enhancement suggestions are tracked as GitHub issues. When suggesting:
 
 ```bash
 # Clone your fork
-git clone https://github.com/kusumachan/firday-screener.git
-cd firday-screener
+git clone https://github.com/kusumachan/friday-screener.git
+cd friday-screener
 
 # Add upstream remote
-git remote add upstream https://github.com/original/firday-screener.git
+git remote add upstream https://github.com/original/friday-screener.git
 
 # Create virtual environment and install dependencies
 make install

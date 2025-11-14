@@ -5,17 +5,16 @@ Analyzer ini melakukan analisis komprehensif terhadap data fundamental saham
 dan menghasilkan scoring serta rekomendasi berdasarkan kriteria yang ditentukan.
 """
 
-from typing import List, Tuple
+from typing import List
 
 from src.config.settings import (
     DEFAULT_CRITERIA,
     DEFAULT_WEIGHTS,
-    ScreeningCriteria,
     ScoringWeights,
+    ScreeningCriteria,
 )
 from src.models.screening_result import (
     CategoryScore,
-    Rating,
     ScreeningMetrics,
     ScreeningResult,
 )

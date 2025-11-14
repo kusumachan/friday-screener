@@ -1,7 +1,7 @@
 # Friday Screener
 
-[![CI](https://github.com/kusumachan/firday-screener/actions/workflows/ci.yml/badge.svg)](https://github.com/kusumachan/firday-screener/actions/workflows/ci.yml)
-[![Release](https://github.com/kusumachan/firday-screener/actions/workflows/release.yml/badge.svg)](https://github.com/kusumachan/firday-screener/actions/workflows/release.yml)
+[![CI](https://github.com/kusumachan/friday-screener/actions/workflows/ci.yml/badge.svg)](https://github.com/kusumachan/friday-screener/actions/workflows/ci.yml)
+[![Release](https://github.com/kusumachan/friday-screener/actions/workflows/release.yml/badge.svg)](https://github.com/kusumachan/friday-screener/actions/workflows/release.yml)
 [![Python](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
@@ -75,7 +75,7 @@ Untuk development atau customization:
 1. **Clone repository**
 ```bash
 git clone <repository-url>
-cd firday-screener
+cd friday-screener
 ```
 
 2. **Create dan activate virtual environment**
@@ -206,7 +206,7 @@ python -m src.main compare <TICKER1> <TICKER2> [TICKER3] ...
 ## Project Structure
 
 ```
-firday-screener/
+friday-screener/
 ├── .github/
 │   └── workflows/          # GitHub Actions
 │       ├── ci.yml          # Continuous Integration

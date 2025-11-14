@@ -5,13 +5,9 @@ Service ini menggunakan yfinance library untuk fetch data fundamental,
 harga, dan informasi lainnya dari Yahoo Finance API.
 """
 
-import warnings
 from datetime import datetime
 from typing import Dict, Optional
-
-# Suppress yfinance deprecation warnings
-warnings.filterwarnings('ignore', category=DeprecationWarning)
-warnings.simplefilter('ignore')
+import warnings
 
 import yfinance as yf
 
@@ -27,6 +23,10 @@ from src.models.stock_data import (
 )
 from src.utils.helpers import normalize_ticker, safe_float, safe_int
 from src.utils.logger import get_logger
+
+# Suppress yfinance deprecation warnings
+warnings.filterwarnings('ignore', category=DeprecationWarning)
+warnings.simplefilter('ignore')
 
 logger = get_logger(__name__)
 

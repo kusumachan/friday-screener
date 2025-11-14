@@ -208,7 +208,7 @@ def _display_screening_summary(result):
     summary = Text()
     summary.append("Fundamental Rating: ", style="bold")
     summary.append(str(result.rating), style=color)
-    summary.append(f"\nTotal Score: ", style="bold")
+    summary.append("\nTotal Score: ", style="bold")
     summary.append(f"{result.metrics.total_score:.1f}/100", style=color)
     summary.append(
         f"\nData Quality: {result.data_completeness:.0f}%", style="dim"
